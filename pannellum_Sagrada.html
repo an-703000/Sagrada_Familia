@@ -72,8 +72,8 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Facciata della Natività","sceneId":"scene3"},
-        {"pitch":0,"yaw":60,"type":"scene","text":"Facciata della Gloria","sceneId":"scene7"}
+        {"pitch":0,"yaw":-90,"type":"scene","text":"Facciata della Natività","sceneId":"scene3"},
+        {"pitch":0,"yaw":190,"type":"scene","text":"Facciata della Gloria","sceneId":"scene7"}
     ]
 },
 
@@ -81,8 +81,8 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 2.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Torna alla 3","sceneId":"scene3"},
-        {"pitch":0,"yaw":60,"type":"scene","text":"Vai alla 8","sceneId":"scene8"}
+        {"pitch":0,"yaw":0,"type":"scene","text":"Esci","sceneId":"scene3"},
+        {"pitch":0,"yaw":195,"type":"scene","text":"Cripta","sceneId":"scene8"}
     ]
 },
 
@@ -90,8 +90,8 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 3.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Torna alla 1","sceneId":"scene1"},
-        {"pitch":0,"yaw":60,"type":"scene","text":"Vai alla 2","sceneId":"scene2"}
+        {"pitch":-20,"yaw":0,"type":"scene","text":"Torna indietro","sceneId":"scene1"},
+        {"pitch":0,"yaw":180,"type":"scene","text":"Entra","sceneId":"scene2"}
     ]
 },
 
@@ -99,9 +99,9 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 4.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-90,"type":"scene","text":"Torna alla 7","sceneId":"scene7"},
-        {"pitch":0,"yaw":0,"type":"scene","text":"Vai alla 5","sceneId":"scene5"},
-        {"pitch":0,"yaw":90,"type":"scene","text":"Vai alla 6","sceneId":"scene6"}
+        {"pitch":0,"yaw":0,"type":"scene","text":"Facciata della Gloria","sceneId":"scene7"},
+        {"pitch":0,"yaw":-90,"type":"scene","text":"Dettaglio 1","sceneId":"scene5"},
+        {"pitch":0,"yaw":-105,"type":"scene","text":"Dettaglio 2","sceneId":"scene6"}
     ]
 },
 
@@ -109,14 +109,14 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 5.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":0,"type":"scene","text":"Torna alla 4","sceneId":"scene4"},
+        {"pitch":0,"yaw":180,"type":"scene","text":"Vai indietro","sceneId":"scene4"},
         {
-            "pitch":35,
-            "yaw":160,
+            "pitch":65,
+            "yaw":0,
             "type":"info",
             "createTooltipFunc": function(hotSpotDiv){
                 hotSpotDiv.classList.add('hotspot-button');
-                hotSpotDiv.innerHTML = "Passione di Cristo";
+                hotSpotDiv.innerHTML = "Osserva";
                 hotSpotDiv.onclick = function(e){
                     e.stopPropagation();
                     openMedia("Passione di Cristo.jpg");
@@ -130,7 +130,7 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 6.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":0,"type":"scene","text":"Torna alla 4","sceneId":"scene4"}
+        {"pitch":-15,"yaw":125,"type":"scene","text":"Vai indietro","sceneId":"scene4"}
     ]
 },
 
@@ -138,8 +138,8 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 7.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Torna alla 1","sceneId":"scene1"},
-        {"pitch":0,"yaw":60,"type":"scene","text":"Vai alla 4","sceneId":"scene4"}
+        {"pitch":0,"yaw":180,"type":"scene","text":"Facciata della Natività","sceneId":"scene1"},
+        {"pitch":0,"yaw":0,"type":"scene","text":"Facciata della Passione","sceneId":"scene4"}
     ]
 },
 
@@ -147,7 +147,7 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 8.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":0,"type":"scene","text":"Torna alla 2","sceneId":"scene2"}
+        {"pitch":0,"yaw":180,"type":"scene","text":"Torna indietro","sceneId":"scene2"}
     ]
 }
 
