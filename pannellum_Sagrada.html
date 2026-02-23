@@ -3,38 +3,161 @@
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
-<title>Sagrada Familia</title>
+<title>Sagrada Familia - Tour 360</title>
+
 <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css"/>
 <script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
+
 <style>
 html, body { margin:0; height:100%; width:100%; overflow:hidden; }
 #panorama { width:100%; height:100%; }
+
+/* Popup */
+#mediaPopup {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+#mediaPopup img {
+    max-width:80%;
+    max-height:80%;
+    box-shadow:0 0 20px #fff;
+}
+#mediaPopup span {
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* Hotspot personalizzato */
+.hotspot-button {
+    background:rgba(255,255,255,0.8);
+    padding:6px 10px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
 </style>
 </head>
+
 <body>
 
 <div id="panorama"></div>
 
+<!-- Popup -->
+<div id="mediaPopup">
+    <span onclick="closeMedia()">✖</span>
+    <img id="popupImage" src="">
+</div>
+
 <script>
+function openMedia(src){
+    document.getElementById("popupImage").src = src;
+    document.getElementById("mediaPopup").style.display = "flex";
+}
+function closeMedia(){
+    document.getElementById("mediaPopup").style.display = "none";
+}
+
 var scenes = {
-    "scene1": {
-        "type":"equirectangular",
-        "panorama":"Sagrada Familia.jpg",
-        "hotSpots":[
-            {"pitch":0,"yaw":-90,"type":"scene","text":"Entra","sceneId":"scene2"}
-        ]
-    },
-    "scene2": {
-        "type":"equirectangular",
-        "panorama":"Sagrada Familia 2.jpg",
-        "hotSpots":[
-            {"pitch":0,"yaw":0,"type":"scene","text":"Esci","sceneId":"scene1"}
-        ]
-    }
+
+"scene1": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Facciata della Natività","Sagrada Familia 3.jpg":"scene3"},
+        {"pitch":0,"yaw":60,"type":"scene","text":"Facciata della Gloria","Sagrada Familia 7.jpg":"scene7"}
+    ]
+},
+
+"scene2": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 2.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Esci","Sagrada Familia 3.jpg":"scene3"},
+Sagrada Familia 8.jpg    ]
+},
+
+"scene3": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 3.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Scendi","Sagrada Familia.jpg":"scene1"},
+Sagrada Familia 2.jpg    ]
+},
+
+"scene4": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 4.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":-90,"type":"scene","text":"Facciata della Gloria","Sagrada Familia 7.jpg":"scene7"},
+        {"pitch":0,"yaw":0,"type":"scene","text":"Vai avanti","Sagrada Familia 5.jpg":"scene5"},
+        {"pitch":0,"yaw":90,"type":"scene","text":"Vai","Sagrada Familia 6.jpg":"scene6"}
+    ]
+},
+
+"scene5": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 5.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":0,"type":"scene","text":"Vai indietro","Sagrada Familia 4.jpg":"scene4"},
+
+        {
+            "pitch":35,
+            "yaw":160,
+            "type":"info",
+            "createTooltipFunc": function(hotSpotDiv){
+                hotSpotDiv.classList.add('hotspot-button');
+                hotSpotDiv.innerHTML = "Passione di Cristo";
+                hotSpotDiv.onclick = function(e){
+                    e.stopPropagation();
+                    openMedia("Passione di Cristo.jpg");
+                };
+            }
+        }
+    ]
+},
+
+"scene6": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 6.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":0,"type":"scene","text":"Vai indietro","Sagrada Familia 4.jpg":"scene4"}
+    ]
+},
+
+"scene7": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 7.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Vai indietro","Sagrada Familia.jpg":"scene1"},
+        {"pitch":0,"yaw":60,"type":"scene","text":"Facciata della Passione","Sagrada Familia 4.jpg":"scene4"}
+    ]
+},
+
+"scene8": {
+    "type":"equirectangular",
+    "panorama":"Sagrada Familia 8.jpg",
+    "hotSpots":[
+        {"pitch":0,"yaw":0,"type":"scene","text":"Vai indietro","Sagrada Familia 2.jpg":"scene2"}
+    ]
+}
+
 };
 
 pannellum.viewer('panorama', {
-    "default":{"firstScene":"scene1","sceneFadeDuration":1000},
+    "default":{
+        "firstScene":"scene1",
+        "sceneFadeDuration":1000
+    },
     "scenes":scenes,
     "autoLoad":true,
     "showFullscreenCtrl":true,
