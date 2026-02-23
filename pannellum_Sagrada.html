@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <title>Sagrada Familia - Tour 360</title>
 
@@ -73,8 +72,8 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Facciata della Natività","Sagrada Familia 3.jpg":"scene3"},
-        {"pitch":0,"yaw":60,"type":"scene","text":"Facciata della Gloria","Sagrada Familia 7.jpg":"scene7"}
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Facciata della Natività","sceneId":"scene3"},
+        {"pitch":0,"yaw":60,"type":"scene","text":"Facciata della Gloria","sceneId":"scene7"}
     ]
 },
 
@@ -82,25 +81,27 @@ var scenes = {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 2.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Esci","Sagrada Familia 3.jpg":"scene3"},
-Sagrada Familia 8.jpg    ]
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Torna alla 3","sceneId":"scene3"},
+        {"pitch":0,"yaw":60,"type":"scene","text":"Vai alla 8","sceneId":"scene8"}
+    ]
 },
 
 "scene3": {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 3.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Scendi","Sagrada Familia.jpg":"scene1"},
-Sagrada Familia 2.jpg    ]
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Torna alla 1","sceneId":"scene1"},
+        {"pitch":0,"yaw":60,"type":"scene","text":"Vai alla 2","sceneId":"scene2"}
+    ]
 },
 
 "scene4": {
     "type":"equirectangular",
     "panorama":"Sagrada Familia 4.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-90,"type":"scene","text":"Facciata della Gloria","Sagrada Familia 7.jpg":"scene7"},
-        {"pitch":0,"yaw":0,"type":"scene","text":"Vai avanti","Sagrada Familia 5.jpg":"scene5"},
-        {"pitch":0,"yaw":90,"type":"scene","text":"Vai","Sagrada Familia 6.jpg":"scene6"}
+        {"pitch":0,"yaw":-90,"type":"scene","text":"Torna alla 7","sceneId":"scene7"},
+        {"pitch":0,"yaw":0,"type":"scene","text":"Vai alla 5","sceneId":"scene5"},
+        {"pitch":0,"yaw":90,"type":"scene","text":"Vai alla 6","sceneId":"scene6"}
     ]
 },
 
@@ -108,8 +109,7 @@ Sagrada Familia 2.jpg    ]
     "type":"equirectangular",
     "panorama":"Sagrada Familia 5.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":0,"type":"scene","text":"Vai indietro","Sagrada Familia 4.jpg":"scene4"},
-
+        {"pitch":0,"yaw":0,"type":"scene","text":"Torna alla 4","sceneId":"scene4"},
         {
             "pitch":35,
             "yaw":160,
@@ -130,7 +130,7 @@ Sagrada Familia 2.jpg    ]
     "type":"equirectangular",
     "panorama":"Sagrada Familia 6.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":0,"type":"scene","text":"Vai indietro","Sagrada Familia 4.jpg":"scene4"}
+        {"pitch":0,"yaw":0,"type":"scene","text":"Torna alla 4","sceneId":"scene4"}
     ]
 },
 
@@ -138,8 +138,8 @@ Sagrada Familia 2.jpg    ]
     "type":"equirectangular",
     "panorama":"Sagrada Familia 7.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":-60,"type":"scene","text":"Vai indietro","Sagrada Familia.jpg":"scene1"},
-        {"pitch":0,"yaw":60,"type":"scene","text":"Facciata della Passione","Sagrada Familia 4.jpg":"scene4"}
+        {"pitch":0,"yaw":-60,"type":"scene","text":"Torna alla 1","sceneId":"scene1"},
+        {"pitch":0,"yaw":60,"type":"scene","text":"Vai alla 4","sceneId":"scene4"}
     ]
 },
 
@@ -147,7 +147,7 @@ Sagrada Familia 2.jpg    ]
     "type":"equirectangular",
     "panorama":"Sagrada Familia 8.jpg",
     "hotSpots":[
-        {"pitch":0,"yaw":0,"type":"scene","text":"Vai indietro","Sagrada Familia 2.jpg":"scene2"}
+        {"pitch":0,"yaw":0,"type":"scene","text":"Torna alla 2","sceneId":"scene2"}
     ]
 }
 
