@@ -156,10 +156,24 @@ var scenes = {
 pannellum.viewer('panorama', {
     "default":{
         "firstScene":"scene1",
-        "sceneFadeDuration":1000
+        "sceneFadeDuration":1000,
+
+        "hfov":110,
+        "minHfov":50,
+        "maxHfov":120,
+
+        "minYaw":-180,
+        "maxYaw":180,
+        "minPitch":-90,
+        "maxPitch":90,
+
+        "orientationOnByDefault":false
     },
     "scenes":scenes,
     "autoLoad":true,
+    "draggable":true,
+    "mouseZoom":true,
+    "touchZoom":true,
     "showFullscreenCtrl":true,
     "showVRCtrl":true
 });
